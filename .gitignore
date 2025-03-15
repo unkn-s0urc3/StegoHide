@@ -1,0 +1,50 @@
+# Visual Studio
+.vs/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+Generated/
+GeneratedFiles/
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+.nuget/
+
+# Project-specific
+project.lock.json
+project.assets.json
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+*.sln.iml
+
+# DotNet tools
+*.dotnet-tools.json
+
+# Local environment
+.env
+secrets.json
+
+# Coverage & testing
+coverage/
+*.coverage
+TestResults/
+
+# Others
+*.DS_Store
+Thumbs.db
