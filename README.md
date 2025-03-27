@@ -14,7 +14,7 @@ To use the program, you need to have .NET SDK installed.
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/StegoHide.git
+   git clone https://github.com/unkn-s0urc3/StegoHide.git
    cd StegoHide
    ```
 2. Build the project:
