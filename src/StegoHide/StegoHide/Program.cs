@@ -133,13 +133,16 @@ namespace StegoHide
         // Метод для отображения подсказки по использованию
         static void ShowUsage()
         {
+            Console.WriteLine("----------------------------------------------------------------");
             Console.WriteLine("Usage:");
             // Использование:
             Console.WriteLine("StegoHide embed <imagePath> <outputPath> <message> <bitDensity>");
             // StegoHide embed <imagePath> <outputPath> <message> <bitDensity>
             Console.WriteLine("StegoHide extract <imagePath> <bitDensity>");
             // StegoHide extract <imagePath> <bitDensity>
+            Console.WriteLine("----------------------------------------------------------------");
             Console.WriteLine();
+            Console.WriteLine("----------------------------------------------------------------");
             Console.WriteLine("Example for embedding:");
             // Пример для встраивания:
             Console.WriteLine("StegoHide embed \"image.bmp\" \"output.bmp\" \"Hello World!\" 8");
@@ -148,6 +151,7 @@ namespace StegoHide
             // Пример для извлечения:
             Console.WriteLine("StegoHide extract \"output.bmp\" 8");
             // StegoHide extract \"output.bmp\" 8
+            Console.WriteLine("----------------------------------------------------------------");
         }
     }
 }
