@@ -9,19 +9,6 @@
 - Supports adjustable embedding density (from 1 to 8 bits per byte).
 - Validates input parameters and handles errors.
 
-## Installation
-To use the program, you need to have .NET SDK installed.
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/unkn-s0urc3/StegoHide.git
-   cd StegoHide
-   ```
-2. Build the project:
-   ```sh
-   dotnet build
-   ```
-
 ## Usage
 
 ### Embedding a Message
