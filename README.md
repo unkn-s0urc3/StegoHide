@@ -1,60 +1,60 @@
 # StegoHide
 
-## Описание
-**StegoHide** — это консольная программа для стеганографического скрытия и извлечения текстовых сообщений в 24-битных BMP-изображениях. Программа использует метод Least Significant Bit (LSB), записывая информацию в младшие биты красного (R) канала каждого пикселя.
+## Description
+**StegoHide** is a command-line program for steganographic hiding and extraction of text messages in 24-bit BMP images. The program uses the Least Significant Bit (LSB) method, embedding information in the least significant bits of the red (R) channel of each pixel.
 
-## Возможности
-- Встраивание текстового сообщения в изображение BMP.
-- Извлечение скрытого сообщения из изображения.
-- Поддержка настраиваемой плотности встраивания (от 1 до 8 бит на байт).
-- Проверка входных параметров и обработка ошибок.
+## Features
+- Embeds a text message into a BMP image.
+- Extracts hidden messages from images.
+- Supports adjustable embedding density (from 1 to 8 bits per byte).
+- Validates input parameters and handles errors.
 
-## Установка
-Для использования программы необходимо иметь установленный .NET SDK. 
+## Installation
+To use the program, you need to have .NET SDK installed.
 
-1. Клонируйте репозиторий:
+1. Clone the repository:
    ```sh
    git clone https://github.com/your-username/StegoHide.git
    cd StegoHide
    ```
-2. Соберите проект:
+2. Build the project:
    ```sh
    dotnet build
    ```
 
-## Использование
+## Usage
 
-### Встраивание сообщения
+### Embedding a Message
 ```sh
 StegoHide embed "image.bmp" "output.bmp" "Hello World!" 8
 ```
-- `image.bmp` — исходное изображение BMP.
-- `output.bmp` — изображение, в которое будет скрыто сообщение.
-- `"Hello World!"` — текстовое сообщение.
-- `8` — плотность встраивания (бит на байт, от 1 до 8).
+- `image.bmp` — the original BMP image.
+- `output.bmp` — the image where the message will be hidden.
+- `"Hello World!"` — the text message to embed.
+- `8` — embedding density (bits per byte, from 1 to 8).
 
-### Извлечение сообщения
+### Extracting a Message
 ```sh
 StegoHide extract "output.bmp" 8
 ```
-- `output.bmp` — изображение с зашифрованным сообщением.
-- `8` — плотность бит, использованная при встраивании.
+- `output.bmp` — the image with the hidden message.
+- `8` — the bit density used during embedding.
 
-## Принцип работы
+## How It Works
 
-### Встраивание сообщения (EmbedMessage)
-1. Загружается изображение BMP.
-2. Сообщение преобразуется в массив байтов, включая заголовок с его длиной (4 байта).
-3. Биты сообщения последовательно записываются в младшие биты красного канала (R) каждого пикселя.
-4. Изменённое изображение сохраняется в файл.
+### Embedding a Message (EmbedMessage)
+1. The BMP image is loaded.
+2. The message is converted into a byte array, including a header with its length (4 bytes).
+3. The message bits are sequentially written into the least significant bits of the red (R) channel of each pixel.
+4. The modified image is saved to a file.
 
-### Извлечение сообщения (ExtractMessage)
-1. Загружается изображение BMP.
-2. Читаются младшие биты красного канала (R) пикселей.
-3. Восстанавливается длина сообщения из первых 4 байтов.
-4. Оставшиеся биты считываются и преобразуются в текст с кодировкой UTF-8.
+### Extracting a Message (ExtractMessage)
+1. The BMP image is loaded.
+2. The least significant bits of the red (R) channel of the pixels are read.
+3. The message length is reconstructed from the first 4 bytes.
+4. The remaining bits are read and converted back to text using UTF-8 encoding.
 
-## Обработка ошибок
-- Проверяется количество аргументов, при ошибке выводится инструкция по использованию.
-- Если файл не найден, программа сообщает об этом пользователю.
-- Если возникают ошибки при встраивании или извлечении, программа выводит соответствующее сообщение.
+## Error Handling
+- Checks the number of arguments and displays usage instructions if incorrect.
+- If the specified file is not found, an error message is displayed.
+- If errors occur during embedding or extraction, an appropriate message is shown.
